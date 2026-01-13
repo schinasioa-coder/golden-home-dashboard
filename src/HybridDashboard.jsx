@@ -15,6 +15,36 @@ const HybridDashboard = () => {
   });
   // ========================================
 
+// ========================================
+// SIMPLE PASSWORD PROTECTION (no accounts)
+// ========================================
+// IMPORTANT: This is a "shared password" gate for convenience.
+// It is NOT high-security: the password exists in the front-end code.
+// Change this password to something only you share with trusted people.
+const DASHBOARD_PASSWORD = "CHANGE_ME";
+
+const [isAuthenticated, setIsAuthenticated] = useState(() => {
+  // Remember login on this device
+  return localStorage.getItem("gh_dashboard_auth") === "true";
+});
+
+const [passwordInput, setPasswordInput] = useState("");
+
+const handleLogin = () => {
+  if (passwordInput === DASHBOARD_PASSWORD) {
+    localStorage.setItem("gh_dashboard_auth", "true");
+    setIsAuthenticated(true);
+  } else {
+    alert("Wrong password");
+  }
+};
+
+const handleLogout = () => {
+  localStorage.removeItem("gh_dashboard_auth");
+  setIsAuthenticated(false);
+  setPasswordInput("");
+};
+
   const [selectedManager, setSelectedManager] = useState('total');
   const [selectedMonth, setSelectedMonth] = useState('january');
   const [data, setData] = useState(null);
@@ -500,6 +530,107 @@ const HybridDashboard = () => {
   );
 
   if (!mounted) return null;
+
+// Password gate (simple shared password)
+if (!isAuthenticated) {
+  return (
+    <div style={{
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: 'linear-gradient(135deg, #0A0E27 0%, #1A1F3A 100%)',
+      color: '#E5E7EB',
+      padding: 24,
+      fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif"
+    }}>
+      <div style={{
+        width: '100%',
+        maxWidth: 520,
+        background: 'rgba(255, 255, 255, 0.04)',
+        border: '1px solid rgba(255, 255, 255, 0.10)',
+        borderRadius: 20,
+        padding: 32,
+        boxShadow: '0 20px 60px rgba(0,0,0,0.45)'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 18 }}>
+          <div style={{
+            width: 54,
+            height: 54,
+            borderRadius: 16,
+            background: 'linear-gradient(135deg, #C9A961 0%, #D4AF37 100%)',
+            color: '#0A0E27',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontWeight: 800,
+            fontSize: 26,
+            fontFamily: "'Bebas Neue', sans-serif"
+          }}>
+            GH
+          </div>
+          <div>
+            <div style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: 34,
+              letterSpacing: 1.5,
+              color: '#C9A961',
+              lineHeight: 1
+            }}>
+              Golden Home Dashboard
+            </div>
+            <div style={{ marginTop: 6, color: '#9CA3AF', fontSize: 14 }}>
+              Enter password to continue
+            </div>
+          </div>
+        </div>
+
+        <input
+          type="password"
+          value={passwordInput}
+          onChange={(e) => setPasswordInput(e.target.value)}
+          placeholder="Password"
+          style={{
+            width: '100%',
+            padding: '14px 16px',
+            borderRadius: 12,
+            border: '2px solid rgba(255, 255, 255, 0.10)',
+            background: 'rgba(255, 255, 255, 0.06)',
+            color: '#F3F4F6',
+            fontSize: 15,
+            outline: 'none'
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') handleLogin();
+          }}
+        />
+
+        <button
+          onClick={handleLogin}
+          style={{
+            marginTop: 16,
+            width: '100%',
+            padding: '14px 16px',
+            borderRadius: 12,
+            border: '2px solid rgba(201, 169, 97, 0.3)',
+            background: '#C9A961',
+            color: '#0A0E27',
+            fontWeight: 800,
+            cursor: 'pointer',
+            fontSize: 15
+          }}
+        >
+          Unlock Dashboard
+        </button>
+
+        <div style={{ marginTop: 14, color: '#6B7280', fontSize: 12, lineHeight: 1.5 }}>
+          Tip: After you log in once, this device will remember it.
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
   if (!currentMonthData) {
     return (
@@ -1438,6 +1569,12 @@ const HybridDashboard = () => {
                 <Settings size={18} />
                 {dataSource === 'sheets' ? 'Settings' : 'Connect Sheets'}
               </button>
+
+<button className="action-btn" onClick={handleLogout} title="Log out (this device)">
+  <AlertCircle size={18} />
+  Log out
+</button>
+
               
               <div className="live-indicator">
                 <div className="live-dot"></div>
