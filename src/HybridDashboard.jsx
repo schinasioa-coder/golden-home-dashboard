@@ -666,14 +666,14 @@ if (!isAuthenticated) {
 
         body {
           font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-          background: #1C1F26;
+          background: #0A0E27;
           color: #E5E7EB;
           overflow-x: hidden;
         }
 
         .dashboard {
           min-height: 100vh;
-          background: linear-gradient(135deg, #1C1F26 0%, #23262F 100%);
+          background: linear-gradient(135deg, #0A0E27 0%, #1A1F3A 100%);
           position: relative;
           overflow: hidden;
         }
@@ -685,7 +685,7 @@ if (!isAuthenticated) {
           right: -20%;
           width: 100%;
           height: 200%;
-          background: radial-gradient(circle, rgba(201, 169, 97, 0.07) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
           pointer-events: none;
           animation: pulse 15s ease-in-out infinite;
         }
@@ -703,8 +703,8 @@ if (!isAuthenticated) {
           right: 0;
           bottom: 0;
           background-image: 
-            linear-gradient(rgba(201, 169, 97, 0.01) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(201, 169, 97, 0.01) 1px, transparent 1px);
+            linear-gradient(rgba(201, 169, 97, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(201, 169, 97, 0.03) 1px, transparent 1px);
           background-size: 50px 50px;
           pointer-events: none;
           z-index: 1;
@@ -835,7 +835,7 @@ if (!isAuthenticated) {
         }
 
         .config-instructions {
-          background: rgba(201, 169, 97, 0.07);
+          background: rgba(201, 169, 97, 0.1);
           border: 1px solid rgba(201, 169, 97, 0.2);
           border-radius: 12px;
           padding: 20px;
@@ -923,7 +923,7 @@ if (!isAuthenticated) {
           align-items: center;
           gap: 6px;
           padding: 4px 12px;
-          background: ${dataSource === 'sheets' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(201, 169, 97, 0.07)'};
+          background: ${dataSource === 'sheets' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(201, 169, 97, 0.1)'};
           border: 1px solid ${dataSource === 'sheets' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(201, 169, 97, 0.2)'};
           border-radius: 6px;
           font-size: 12px;
@@ -945,7 +945,7 @@ if (!isAuthenticated) {
           gap: 10px;
           padding: 12px 20px;
           border: 2px solid rgba(201, 169, 97, 0.3);
-          background: rgba(201, 169, 97, 0.07);
+          background: rgba(201, 169, 97, 0.1);
           color: #C9A961;
           border-radius: 12px;
           cursor: pointer;
@@ -995,7 +995,7 @@ if (!isAuthenticated) {
           display: flex;
           align-items: center;
           gap: 12px;
-          background: ${dataSource === 'sheets' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(201, 169, 97, 0.07)'};
+          background: ${dataSource === 'sheets' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(201, 169, 97, 0.1)'};
           padding: 12px 20px;
           border-radius: 12px;
           border: 1px solid ${dataSource === 'sheets' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(201, 169, 97, 0.2)'};
@@ -1112,7 +1112,7 @@ if (!isAuthenticated) {
         }
 
         .metric-card {
-          background: rgba(255, 255, 255, 0.06);
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 24px;
           padding: 30px;
@@ -1316,7 +1316,7 @@ if (!isAuthenticated) {
 
         .bonus-section {
           margin-top: 50px;
-          background: linear-gradient(135deg, rgba(201, 169, 97, 0.07) 0%, rgba(201, 169, 97, 0.05) 100%);
+          background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, rgba(201, 169, 97, 0.05) 100%);
           border: 2px solid rgba(201, 169, 97, 0.2);
           border-radius: 30px;
           padding: 40px;
@@ -1518,129 +1518,7 @@ if (!isAuthenticated) {
             align-items: flex-start;
           }
         }
-      
-
-        /* ================================
-           Sugar White Theme Overrides
-           ================================ */
-        body {
-          background: #F7F6F2;
-          color: #111827;
-        }
-
-        .dashboard {
-          background: linear-gradient(135deg, #F7F6F2 0%, #EEF2F7 100%);
-          color: #111827;
-        }
-
-        .dashboard::before {
-          background: radial-gradient(circle, rgba(201, 169, 97, 0.08) 0%, transparent 70%);
-          opacity: 1;
-        }
-
-        .dashboard::after {
-          background-image:
-            linear-gradient(rgba(201, 169, 97, 0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(201, 169, 97, 0.02) 1px, transparent 1px);
-        }
-
-        .title-section .subtitle { color: #4B5563; }
-        .time-display { color: #6B7280; }
-
-        .manager-selector {
-          background: rgba(17, 24, 39, 0.02);
-          border: 1px solid rgba(17, 24, 39, 0.06);
-        }
-
-        .manager-btn {
-          background: rgba(17, 24, 39, 0.04);
-          color: #111827;
-        }
-
-        .manager-btn:hover {
-          box-shadow: 0 10px 30px rgba(17, 24, 39, 0.12);
-        }
-
-        .month-dropdown {
-          background: rgba(255, 255, 255, 0.9);
-          border: 2px solid rgba(17, 24, 39, 0.12);
-          color: #111827;
-        }
-
-        .month-dropdown:hover {
-          background: rgba(255, 255, 255, 0.98);
-          border-color: rgba(201, 169, 97, 0.35);
-        }
-
-        .metric-card {
-          background: #FFFFFF;
-          border: 1px solid rgba(17, 24, 39, 0.08);
-          box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
-        }
-
-        .metric-title-section h3 { color: #111827; }
-        .stat-label { color: #6B7280; }
-        .stat-value { color: #111827; }
-        .stat-target { color: #6B7280; }
-
-        .progress-bar { background: rgba(17, 24, 39, 0.06); }
-
-        .ytd-chart {
-          background: rgba(17, 24, 39, 0.03);
-          border: 1px solid rgba(17, 24, 39, 0.06);
-        }
-
-        .ytd-chart-title { color: #6B7280; }
-        .ytd-label-text { color: #6B7280; }
-
-        .bonus-item {
-          background: rgba(255, 255, 255, 0.85);
-          border: 1px solid rgba(17, 24, 39, 0.08);
-        }
-
-        .bonus-item-name { color: #111827; }
-        .bonus-item-score { color: #111827; }
-
-        .info-card {
-          background: #FFFFFF;
-          border: 1px solid rgba(17, 24, 39, 0.08);
-        }
-
-        .info-content h4 { color: #6B7280; }
-        .info-value { color: #111827; }
-        .info-label { color: #6B7280; }
-
-        .info-icon {
-          background: rgba(17, 24, 39, 0.06);
-          color: #6B7280;
-        }
-
-        .error-screen h2 { color: #111827; }
-        .error-screen p { color: #6B7280; }
-
-        .config-panel {
-          background: #FFFFFF;
-          border: 2px solid rgba(201, 169, 97, 0.25);
-        }
-
-        .config-header { border-bottom: 1px solid rgba(17, 24, 39, 0.10); }
-        .config-section label { color: #111827; }
-        .config-help { color: #6B7280; }
-
-        .config-input {
-          background: rgba(17, 24, 39, 0.03);
-          border: 2px solid rgba(17, 24, 39, 0.12);
-          color: #111827;
-        }
-
-        .config-input:focus {
-          border-color: #C9A961;
-          background: rgba(17, 24, 39, 0.02);
-        }
-
-        .close-btn { color: #6B7280; }
-        .close-btn:hover { color: #111827; }
-`}</style>
+      `}</style>
 
       {showConfig && <ConfigPanel />}
 
