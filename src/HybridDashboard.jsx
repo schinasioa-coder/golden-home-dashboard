@@ -21,7 +21,7 @@ const HybridDashboard = () => {
 // IMPORTANT: This is a "shared password" gate for convenience.
 // It is NOT high-security: the password exists in the front-end code.
 // Change this password to something only you share with trusted people.
-const DASHBOARD_PASSWORD = "12092025!";
+const DASHBOARD_PASSWORD = "CHANGE_ME";
 
 const [isAuthenticated, setIsAuthenticated] = useState(() => {
   // Remember login on this device
@@ -666,14 +666,14 @@ if (!isAuthenticated) {
 
         body {
           font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-          background: #0A0E27;
+          background: #1C1F26;
           color: #E5E7EB;
           overflow-x: hidden;
         }
 
         .dashboard {
           min-height: 100vh;
-          background: linear-gradient(135deg, #0A0E27 0%, #1A1F3A 100%);
+          background: linear-gradient(135deg, #1C1F26 0%, #23262F 100%);
           position: relative;
           overflow: hidden;
         }
@@ -685,7 +685,7 @@ if (!isAuthenticated) {
           right: -20%;
           width: 100%;
           height: 200%;
-          background: radial-gradient(circle, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(201, 169, 97, 0.07) 0%, transparent 70%);
           pointer-events: none;
           animation: pulse 15s ease-in-out infinite;
         }
@@ -703,8 +703,8 @@ if (!isAuthenticated) {
           right: 0;
           bottom: 0;
           background-image: 
-            linear-gradient(rgba(201, 169, 97, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(201, 169, 97, 0.03) 1px, transparent 1px);
+            linear-gradient(rgba(201, 169, 97, 0.01) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(201, 169, 97, 0.01) 1px, transparent 1px);
           background-size: 50px 50px;
           pointer-events: none;
           z-index: 1;
@@ -835,7 +835,7 @@ if (!isAuthenticated) {
         }
 
         .config-instructions {
-          background: rgba(201, 169, 97, 0.1);
+          background: rgba(201, 169, 97, 0.07);
           border: 1px solid rgba(201, 169, 97, 0.2);
           border-radius: 12px;
           padding: 20px;
@@ -923,7 +923,7 @@ if (!isAuthenticated) {
           align-items: center;
           gap: 6px;
           padding: 4px 12px;
-          background: ${dataSource === 'sheets' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(201, 169, 97, 0.1)'};
+          background: ${dataSource === 'sheets' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(201, 169, 97, 0.07)'};
           border: 1px solid ${dataSource === 'sheets' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(201, 169, 97, 0.2)'};
           border-radius: 6px;
           font-size: 12px;
@@ -945,7 +945,7 @@ if (!isAuthenticated) {
           gap: 10px;
           padding: 12px 20px;
           border: 2px solid rgba(201, 169, 97, 0.3);
-          background: rgba(201, 169, 97, 0.1);
+          background: rgba(201, 169, 97, 0.07);
           color: #C9A961;
           border-radius: 12px;
           cursor: pointer;
@@ -995,7 +995,7 @@ if (!isAuthenticated) {
           display: flex;
           align-items: center;
           gap: 12px;
-          background: ${dataSource === 'sheets' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(201, 169, 97, 0.1)'};
+          background: ${dataSource === 'sheets' ? 'rgba(16, 185, 129, 0.1)' : 'rgba(201, 169, 97, 0.07)'};
           padding: 12px 20px;
           border-radius: 12px;
           border: 1px solid ${dataSource === 'sheets' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(201, 169, 97, 0.2)'};
@@ -1112,7 +1112,7 @@ if (!isAuthenticated) {
         }
 
         .metric-card {
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+          background: rgba(255, 255, 255, 0.06);
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 24px;
           padding: 30px;
@@ -1316,7 +1316,7 @@ if (!isAuthenticated) {
 
         .bonus-section {
           margin-top: 50px;
-          background: linear-gradient(135deg, rgba(201, 169, 97, 0.1) 0%, rgba(201, 169, 97, 0.05) 100%);
+          background: linear-gradient(135deg, rgba(201, 169, 97, 0.07) 0%, rgba(201, 169, 97, 0.05) 100%);
           border: 2px solid rgba(201, 169, 97, 0.2);
           border-radius: 30px;
           padding: 40px;
