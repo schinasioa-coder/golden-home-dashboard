@@ -21,7 +21,7 @@ const HybridDashboard = () => {
 // IMPORTANT: This is a "shared password" gate for convenience.
 // It is NOT high-security: the password exists in the front-end code.
 // Change this password to something only you share with trusted people.
-const DASHBOARD_PASSWORD = "CHANGE_ME";
+const DASHBOARD_PASSWORD = "12092025!!";
 
 const [isAuthenticated, setIsAuthenticated] = useState(() => {
   // Remember login on this device
